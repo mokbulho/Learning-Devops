@@ -3,7 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:api": "playwright test --grep @api",
+    "test:web": "playwright test --grep @web",
+    "test:master": "playwright test --grep @master",
+    "test:sanity": "playwright test --grep @sanity",
+    "test:regression": "playwright test --grep @regression",
+    "test:e2e": "playwright test --grep @e2e",
+    "test:datadriven": "playwright test --grep @datadriven",
+    "test:master:headed": "playwright test --grep @sanity --headed",
+    "test:sanity:debug": "playwright test --grep @sanity --debug",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,6 +24,7 @@
     "@playwright/test": "^1.65.1",
     "@types/luxon": "^3.7.6",
     "@types/node": "^26.6.6",
+    "allure-commandline": "^2.46.1",
     "typescript": "^7.0.2"
   },
   "dependencies": {
@@ -24,17 +37,5 @@
     "luxon": "^3.7.2",
     "mysql2": "^3.24.6",
     "xlsx": "^0.18.5"
-  },
-  "scripts": {
-    "test:api": "playwright test --grep @api",
-    "test:web": "playwright test --grep @web",
-    "test:master": "playwright test --grep @master",
-    "test:sanity": "playwright test --grep @sanity",
-    "test:regression": "playwright test --grep @regression",
-    "test:e2e": "playwright test --grep @e2e",
-    "test:datadriven": "playwright test --grep @datadriven",
-    "test:master:headed": "playwright test --grep @sanity --headed",
-    "test:sanity:debug": "playwright test --grep @sanity --debug"
-}
-
+  }
 }
